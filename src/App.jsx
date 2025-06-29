@@ -29,28 +29,20 @@ export default function App() {
   return (
     <div style={{ padding: '2rem', textAlign: 'center' }}>
       <h1>Main App</h1>
-
       {role ? (
-        <div>
+        <>
           <p>You are logged in as: <strong>{role}</strong></p>
-          <button onClick={logout} style={{ padding: '0.5rem 1rem', marginBottom: '1rem' }}>
-            Logout
-          </button>
-
+          <button onClick={logout}>Logout</button>
           <Suspense fallback={<div>Loading Music Library...</div>}>
             <MusicLibrary role={role} />
           </Suspense>
-        </div>
+        </>
       ) : (
-        <div>
-          <p>Select your role to log in:</p>
-          <button onClick={() => login('admin')} style={{ padding: '0.5rem 1rem', margin: '0 1rem' }}>
-            Login as Admin
-          </button>
-          <button onClick={() => login('user')} style={{ padding: '0.5rem 1rem' }}>
-            Login as User
-          </button>
-        </div>
+        <>
+          <p>Select a role to log in:</p>
+          <button onClick={() => login('admin')}>Login as Admin</button>{' '}
+          <button onClick={() => login('user')}>Login as User</button>
+        </>
       )}
     </div>
   );
