@@ -7,7 +7,7 @@ export default defineConfig({
     react(),
     federation({
       remotes: {
-        music_library: 'http://localhost:5001/assets/remoteEntry.js',
+        music_library: 'https://bespoke-boba-87555d.netlify.app/remoteEntry.js',
       },
     }),
   ],
